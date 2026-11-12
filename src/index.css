@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --dosa-cream: #FFF3DF;
+    --hero-peach: #EBCBB3;
+    --crush-orange: #F15A24;
+    --chilli-red: #D93622;
+    --espresso: #27201C;
+    --golden-dosa: #E8A83E;
+  }
+
+  body {
+    background-color: var(--dosa-cream);
+    color: var(--espresso);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, .font-headline {
+    font-family: 'Barlow Condensed', sans-serif;
+  }
+}
+
+.bg-grain {
+  background-image: radial-gradient(rgba(39, 32, 28, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
