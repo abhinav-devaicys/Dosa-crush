@@ -38,30 +38,48 @@ export function Navbar({ cartCount, onOpenCart, onNavigate }: NavbarProps) {
         initial={shouldReduceMotion ? false : { y: -18, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.04, ease: easeCubic }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-[padding,background-color,border-color,box-shadow] duration-300 ${
-          scrolled
-            ? 'bg-[#FFF3DF]/95 backdrop-blur-md py-3.5 border-b border-[#27201C]/10 shadow-xs'
-            : 'bg-transparent py-5 md:py-6'
+        className={`fixed top-0 left-0 right-0 w-full z-50 pointer-events-none px-4 sm:px-6 md:px-10 lg:px-12 transition-[padding] duration-500 ease-out ${
+          scrolled ? 'pt-2.5 md:pt-3' : 'pt-4 md:pt-5'
         }`}
       >
-        <div className="max-w-[1280px] mx-auto px-6 md:px-10 lg:px-12 flex items-center justify-between gap-8">
+        <div
+          className={`pointer-events-auto w-full max-w-[1280px] mx-auto rounded-full px-5 sm:px-6 md:px-8 flex items-center justify-between gap-6 transition-all duration-500 ease-out ${
+            scrolled
+              ? 'py-2.5 md:py-3 bg-[#FFF3DF]/72 backdrop-blur-xl backdrop-saturate-150 border border-[#27201C]/12 shadow-[0_14px_38px_-10px_rgba(39,32,28,0.16)] ring-1 ring-inset ring-white/55'
+              : 'py-3 md:py-3.5 bg-[#FFF3DF]/10 backdrop-blur-[6px] border border-[#FFF3DF]/30 shadow-[0_6px_24px_-8px_rgba(39,32,28,0.10)] ring-1 ring-inset ring-white/20'
+          }`}
+        >
           {/* Zone 1: Brand Wordmark */}
-          <a
-            href="#hero"
-            onClick={(e) => {
-              e.preventDefault();
-              onNavigate('hero');
-            }}
-            className="group flex items-center gap-2 text-xl md:text-2xl font-headline font-extrabold tracking-wider text-[#27201C] whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F15A24] rounded-sm"
-          >
-            <span>DOSA CRUSH</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#F15A24] transition-transform duration-300 group-hover:scale-150" />
-          </a>
+          <div className="md:flex-1 flex items-center justify-start">
+            <a
+              href="#hero"
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigate('hero');
+              }}
+              className={`group flex items-center gap-2 text-xl md:text-2xl font-headline font-extrabold tracking-wider whitespace-nowrap shrink-0 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 rounded-sm ${
+                scrolled
+                  ? 'text-[#27201C] focus-visible:ring-[#F15A24]'
+                  : 'text-[#FFF3DF] drop-shadow-[0_1px_2px_rgba(39,32,28,0.2)] focus-visible:ring-[#FFF3DF]'
+              }`}
+            >
+              <span>DOSA CRUSH</span>
+              <span
+                className={`w-1.5 h-1.5 rounded-full transition-all duration-300 group-hover:scale-150 ${
+                  scrolled ? 'bg-[#F15A24]' : 'bg-[#E8A83E]'
+                }`}
+              />
+            </a>
+          </div>
 
           {/* Zone 2: Navigation Links */}
           <nav
             aria-label="Primary Navigation"
-            className="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide text-[#27201C]/80"
+            className={`hidden md:flex items-center justify-center gap-7 lg:gap-9 text-sm font-medium tracking-wide transition-colors duration-300 ${
+              scrolled
+                ? 'text-[#27201C]/90'
+                : 'text-[#FFF3DF] lg:text-[#27201C]/90'
+            }`}
           >
             {navLinks.map((link) => (
               <a
@@ -71,24 +89,42 @@ export function Navbar({ cartCount, onOpenCart, onNavigate }: NavbarProps) {
                   e.preventDefault();
                   onNavigate(link.id);
                 }}
-                className="relative py-1.5 hover:text-[#27201C] transition-colors whitespace-nowrap shrink-0 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F15A24] rounded-sm"
+                className={`relative py-1 transition-colors whitespace-nowrap shrink-0 group focus-visible:outline-none focus-visible:ring-2 rounded-sm ${
+                  scrolled
+                    ? 'hover:text-[#27201C] focus-visible:ring-[#F15A24]'
+                    : 'hover:text-white lg:hover:text-[#27201C] focus-visible:ring-[#FFF3DF] lg:focus-visible:ring-[#F15A24]'
+                }`}
               >
                 {link.name}
-                <span className="absolute bottom-0.5 left-0 w-0 h-[1.5px] bg-[#F15A24] transition-all duration-300 group-hover:w-full" />
+                <span
+                  className={`absolute bottom-0 left-0 w-0 h-[1.5px] transition-all duration-300 group-hover:w-full ${
+                    scrolled ? 'bg-[#F15A24]' : 'bg-[#E8A83E] lg:bg-[#F15A24]'
+                  }`}
+                />
               </a>
             ))}
           </nav>
 
           {/* Zone 3: Primary Actions */}
-          <div className="flex items-center gap-3 sm:gap-4 shrink-0">
+          <div className="md:flex-1 flex items-center justify-end gap-3 sm:gap-4 shrink-0">
             <button
               onClick={onOpenCart}
-              className="relative p-2.5 text-[#27201C] hover:text-[#F15A24] transition-colors flex items-center justify-center cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F15A24] rounded-full"
+              className={`relative p-2.5 transition-colors flex items-center justify-center cursor-pointer focus-visible:outline-none focus-visible:ring-2 rounded-full ${
+                scrolled
+                  ? 'text-[#27201C] hover:text-[#F15A24] focus-visible:ring-[#F15A24]'
+                  : 'text-[#FFF3DF] hover:text-[#E8A83E] lg:text-[#27201C] lg:hover:text-[#F15A24] focus-visible:ring-[#FFF3DF] lg:focus-visible:ring-[#F15A24]'
+              }`}
               aria-label="Shopping Cart"
             >
               <ShoppingBag className="w-5 h-5" />
               {cartCount > 0 && (
-                <span className="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full bg-[#F15A24] text-white text-[10px] font-bold flex items-center justify-center tabular-nums">
+                <span
+                  className={`absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full text-[10px] font-bold flex items-center justify-center tabular-nums ${
+                    scrolled
+                      ? 'bg-[#F15A24] text-white'
+                      : 'bg-[#FFF3DF] text-[#D9471F] lg:bg-[#F15A24] lg:text-white'
+                  }`}
+                >
                   {cartCount}
                 </span>
               )}
@@ -96,7 +132,11 @@ export function Navbar({ cartCount, onOpenCart, onNavigate }: NavbarProps) {
 
             <button
               onClick={() => onNavigate('menu-explorer')}
-              className="hidden sm:inline-flex items-center gap-1.5 px-5 py-2.5 bg-[#27201C] text-[#FFF3DF] text-xs font-semibold tracking-widest uppercase rounded-full hover:bg-[#F15A24] active:scale-[0.98] transition-all duration-300 whitespace-nowrap shrink-0 shadow-sm cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F15A24] focus-visible:ring-offset-2 focus-visible:ring-offset-[#FFF3DF]"
+              className={`hidden sm:inline-flex items-center gap-1.5 px-5 py-2.5 text-xs font-semibold tracking-widest uppercase rounded-full active:scale-[0.98] transition-all duration-300 whitespace-nowrap shrink-0 shadow-sm cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
+                scrolled
+                  ? 'bg-[#27201C] text-[#FFF3DF] hover:bg-[#F15A24] focus-visible:ring-[#F15A24] focus-visible:ring-offset-[#FFF3DF]'
+                  : 'bg-[#FFF3DF] text-[#27201C] hover:bg-[#27201C] hover:text-[#FFF3DF] focus-visible:ring-[#FFF3DF] focus-visible:ring-offset-[#D9471F] lg:bg-[#27201C] lg:text-[#FFF3DF] lg:hover:bg-[#F15A24] lg:focus-visible:ring-[#F15A24] lg:focus-visible:ring-offset-[#FFF3DF]'
+              }`}
             >
               <span>Order Now</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -105,7 +145,11 @@ export function Navbar({ cartCount, onOpenCart, onNavigate }: NavbarProps) {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 text-[#27201C] hover:text-[#F15A24] transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F15A24] rounded-md"
+              className={`md:hidden p-2 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 rounded-full ${
+                scrolled
+                  ? 'text-[#27201C] hover:text-[#F15A24] focus-visible:ring-[#F15A24]'
+                  : 'text-[#FFF3DF] hover:text-[#E8A83E] focus-visible:ring-[#FFF3DF]'
+              }`}
               aria-label="Toggle Menu"
               aria-expanded={mobileMenuOpen}
             >

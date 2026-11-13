@@ -24,7 +24,7 @@ export function PageTransitionWrapper({ children }: PageTransitionWrapperProps) 
           initial={shouldReduceMotion ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.45, ease: EDITORIAL_EASE }}
-          className="min-h-screen bg-[#FFF3DF] text-[#27201C] selection:bg-[#F15A24] selection:text-white"
+          className="w-full min-h-screen bg-[#FFF3DF] text-[#27201C] selection:bg-[#F15A24] selection:text-white"
         >
           {children}
         </motion.div>

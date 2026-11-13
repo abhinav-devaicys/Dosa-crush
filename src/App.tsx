@@ -72,7 +72,7 @@ export default function App() {
         onNavigate={handleNavigate}
       />
 
-      <main>
+      <main className="w-full">
         <HeroSection
           onExploreMenu={() => handleNavigate('menu-explorer')}
           onOrderOnline={() => setIsCartOpen(true)}

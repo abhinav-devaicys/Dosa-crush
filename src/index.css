@@ -3,6 +3,7 @@
 @layer base {
   :root {
     --dosa-cream: #FFF3DF;
+    --crush-terracotta: #D9471F;
     --hero-peach: #EBCBB3;
     --crush-orange: #F15A24;
     --chilli-red: #D93622;
@@ -10,12 +11,22 @@
     --golden-dosa: #E8A83E;
   }
 
+  html,
   body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
     background-color: var(--dosa-cream);
     color: var(--espresso);
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
     scroll-behavior: smooth;
+  }
+
+  #root {
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
 
   h1, h2, h3, h4, .font-headline {
