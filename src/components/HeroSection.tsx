@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
 import { ArrowUpRight, Sparkles } from 'lucide-react';
+import { IMAGES } from '../data/images';
 
 interface HeroSectionProps {
   onExploreMenu: () => void;
@@ -232,7 +233,7 @@ export function HeroSection({ onExploreMenu, onOrderOnline }: HeroSectionProps) 
             >
               <div className="relative overflow-hidden rounded-2xl shadow-xl border border-[#27201C]/10 bg-[#27201C] aspect-[4/3] sm:aspect-[16/11] lg:aspect-[5/4] xl:h-[500px] xl:aspect-auto w-full">
                 <img
-                  src="/src/assets/images/dosa_crush_hero_1794506063264.jpg"
+                  src={IMAGES.heroDosa}
                   alt="Crispy golden dosa served on dark ceramic stoneware with coconut chutney, tomato garlic chutney, and steaming sambar"
                   referrerPolicy="no-referrer"
                   loading="eager"

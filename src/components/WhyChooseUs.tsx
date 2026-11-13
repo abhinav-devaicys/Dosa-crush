@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Sparkles, ArrowUpRight } from 'lucide-react';
+import { IMAGES } from '../data/images';
 
 export function WhyChooseUs() {
   const highlights = [
@@ -8,25 +9,25 @@ export function WhyChooseUs() {
       number: '01',
       title: 'CLASSICS MEET CREATIVITY',
       description: 'Traditional South Indian favourites alongside exciting fusion creations.',
-      image: '/src/assets/images/dosa_crush_mysore_masala_1794506079027.jpg'
+      image: IMAGES.mysoreMasala
     },
     {
       number: '02',
       title: 'SOMETHING FOR EVERY CRAVING',
       description: 'A diverse food selection beyond dosa, including snacks, street food, and beverages.',
-      image: '/src/assets/images/dosa_crush_pav_bhaji_1794506306212.jpg'
+      image: IMAGES.pavBhaji
     },
     {
       number: '03',
       title: 'MADE TO BE ENJOYED',
       description: 'A welcoming food experience for friends, families, and everyday cravings.',
-      image: '/src/assets/images/dosa_crush_lounge_interior_1794506605707.jpg'
+      image: IMAGES.loungeInterior
     },
     {
       number: '04',
       title: 'DINE IN OR TAKE AWAY',
       description: 'Enjoy your favourites at the café or order them for home.',
-      image: '/src/assets/images/dosa_crush_hero_1794506063264.jpg'
+      image: IMAGES.heroDosa
     }
   ];
 

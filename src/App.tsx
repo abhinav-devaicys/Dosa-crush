@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from 'react';
-import { MotionConfig } from 'motion/react';
+import { PageTransitionWrapper } from './components/PageTransitionWrapper';
 import { Navbar } from './components/Navbar';
 import { ScrollProgressBar } from './components/ScrollProgressBar';
 import { HeroSection } from './components/HeroSection';
@@ -64,8 +64,7 @@ export default function App() {
   const totalCartCount = cart.reduce((sum, ci) => sum + ci.quantity, 0);
 
   return (
-    <MotionConfig reducedMotion="user">
-    <div className="min-h-screen bg-[#FFF3DF] text-[#27201C] selection:bg-[#F15A24] selection:text-white">
+    <PageTransitionWrapper>
       <ScrollProgressBar />
       <Navbar
         cartCount={totalCartCount}
@@ -103,7 +102,6 @@ export default function App() {
         onUpdateQuantity={handleUpdateQuantity}
         onClearCart={handleClearCart}
       />
-    </div>
-    </MotionConfig>
+    </PageTransitionWrapper>
   );
 }

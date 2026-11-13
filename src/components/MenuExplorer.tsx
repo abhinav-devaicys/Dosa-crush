@@ -113,23 +113,39 @@ export function MenuExplorer({ onAddToCart, onOpenOrderDrawer }: MenuExplorerPro
                 <div className="p-6 pt-0">
                   <button
                     onClick={() => handleAddWithFeedback(item)}
-                    className={`w-full py-3 px-4 rounded-xl font-semibold text-xs tracking-wider uppercase transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer ${
+                    className={`w-full py-3 px-4 rounded-xl font-semibold text-xs tracking-wider uppercase active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer ${
                       addedId === item.id
                         ? 'bg-emerald-700 text-white'
                         : 'bg-[#27201C] text-[#FFF3DF] hover:bg-[#F15A24]'
                     }`}
                   >
-                    {addedId === item.id ? (
-                      <>
-                        <Check className="w-4 h-4" />
-                        <span>Added to Order</span>
-                      </>
-                    ) : (
-                      <>
-                        <Plus className="w-4 h-4" />
-                        <span>Add to Order — ₹{item.price}</span>
-                      </>
-                    )}
+                    <AnimatePresence mode="wait" initial={false}>
+                      {addedId === item.id ? (
+                        <motion.span
+                          key="added"
+                          initial={{ opacity: 0, y: 4 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -4 }}
+                          transition={{ duration: 0.18 }}
+                          className="inline-flex items-center gap-2"
+                        >
+                          <Check className="w-4 h-4" />
+                          <span>Added to Order</span>
+                        </motion.span>
+                      ) : (
+                        <motion.span
+                          key="add"
+                          initial={{ opacity: 0, y: 4 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -4 }}
+                          transition={{ duration: 0.18 }}
+                          className="inline-flex items-center gap-2"
+                        >
+                          <Plus className="w-4 h-4" />
+                          <span>Add to Order — ₹{item.price}</span>
+                        </motion.span>
+                      )}
+                    </AnimatePresence>
                   </button>
                 </div>
               </div>

@@ -1,3 +1,5 @@
+import { IMAGES } from './images';
+
 export interface MenuItem {
   id: string;
   name: string;
@@ -29,7 +31,7 @@ export const SIGNATURE_DISHES: SignatureDish[] = [
     subtitle: 'Mumbai Street Legend',
     description: 'Shredded crispy dosa rolled with a buttery medley of bell peppers, paneer cubes, grated cheese, and secret spicy Schezwan masala.',
     price: 320,
-    image: '/src/assets/images/dosa_crush_jini_dosa_1794506306122.jpg',
+    image: IMAGES.jiniDosa,
     isVegetarian: true,
     tag: 'Bestseller'
   },
@@ -39,7 +41,7 @@ export const SIGNATURE_DISHES: SignatureDish[] = [
     subtitle: 'Molten Melt Experience',
     description: 'A dramatic cone-shaped dosa overflowing with hot liquid cheddar, mozzarella, herbs, and garlic butter cascade.',
     price: 380,
-    image: '/src/assets/images/dosa_crush_cheese_volcano_1794506306330.jpg',
+    image: IMAGES.cheeseVolcano,
     isVegetarian: true,
     tag: 'Chef’s Special'
   },
@@ -49,7 +51,7 @@ export const SIGNATURE_DISHES: SignatureDish[] = [
     subtitle: 'Fire-Roasted Garlic Red Chutney',
     description: 'Our signature whole-wheat and lentil batter spread thin, lined with hand-ground spicy red chilli garlic paste and spiced potato filling.',
     price: 280,
-    image: '/src/assets/images/dosa_crush_mysore_masala_1794506079027.jpg',
+    image: IMAGES.mysoreMasala,
     isVegetarian: true,
     tag: 'Classic Crush'
   },
@@ -59,7 +61,7 @@ export const SIGNATURE_DISHES: SignatureDish[] = [
     subtitle: 'Slow-Simmered Spiced Veggies',
     description: 'Rich, buttery mashed vegetable curry simmered with authentic spices, served with two soft butter-toasted pav buns and chopped onions.',
     price: 260,
-    image: '/src/assets/images/dosa_crush_pav_bhaji_1794506306212.jpg',
+    image: IMAGES.pavBhaji,
     isVegetarian: true,
     tag: 'Must Try'
   }
@@ -83,7 +85,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Fermented golden dosa folded over tandoori-spiced paneer tikka, white truffle reduction, and fresh mint chutney.',
     price: 340,
     category: 'dosa-specials',
-    image: '/src/assets/images/dosa_crush_paneer_dosa_1794506078808.jpg',
+    image: IMAGES.paneerDosa,
     isBestseller: true,
     isVegetarian: true
   },
@@ -94,7 +96,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Shredded crispy dosa rolled with bell peppers, paneer, grated cheese, and Schezwan masala.',
     price: 320,
     category: 'dosa-specials',
-    image: '/src/assets/images/dosa_crush_jini_dosa_1794506306122.jpg',
+    image: IMAGES.jiniDosa,
     isBestseller: true,
     isVegetarian: true
   },
@@ -105,7 +107,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Dramatic cone-shaped dosa overflowing with hot liquid cheddar, mozzarella, and garlic butter.',
     price: 380,
     category: 'dosa-specials',
-    image: '/src/assets/images/dosa_crush_cheese_volcano_1794506306330.jpg',
+    image: IMAGES.cheeseVolcano,
     isVegetarian: true
   },
   {
@@ -115,7 +117,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Modern coastal fusion with smashed fresh Hass avocado, green chilli, lime, and toasted sesame inside a crisp rice crepe.',
     price: 360,
     category: 'dosa-specials',
-    image: '/src/assets/images/dosa_crush_paneer_dosa_1794506078808.jpg',
+    image: IMAGES.paneerDosa,
     isVegetarian: true
   },
 
@@ -127,7 +129,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Lined with hand-ground spicy red chilli garlic paste and spiced potato filling, served with coconut chutney & sambar.',
     price: 280,
     category: 'south-indian',
-    image: '/src/assets/images/dosa_crush_mysore_masala_1794506079027.jpg',
+    image: IMAGES.mysoreMasala,
     isBestseller: true,
     isVegetarian: true,
     isSpicy: true
@@ -139,7 +141,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Golden-brown paper roast cooked in pure artisanal butter until shattering crisp.',
     price: 240,
     category: 'south-indian',
-    image: '/src/assets/images/dosa_crush_hero_1794506063264.jpg',
+    image: IMAGES.heroDosa,
     isVegetarian: true
   },
   {
@@ -149,7 +151,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Steam-cooked tender rice idlis sautéed in aromatic golden ghee with gun-powder spice.',
     price: 190,
     category: 'south-indian',
-    image: '/src/assets/images/dosa_crush_mysore_masala_1794506079027.jpg',
+    image: IMAGES.mysoreMasala,
     isVegetarian: true
   },
   {
@@ -159,7 +161,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Golden fried urad dal vadas, crispy on the outside and fluffy inside, served with hot sambar.',
     price: 160,
     category: 'south-indian',
-    image: '/src/assets/images/dosa_crush_hero_1794506063264.jpg',
+    image: IMAGES.heroDosa,
     isVegetarian: true
   },
 
@@ -171,7 +173,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Rich buttery vegetable curry served with two soft butter-toasted pav buns and fresh lemon.',
     price: 260,
     category: 'pav-bhaji',
-    image: '/src/assets/images/dosa_crush_pav_bhaji_1794506306212.jpg',
+    image: IMAGES.pavBhaji,
     isBestseller: true,
     isVegetarian: true
   },
@@ -182,7 +184,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Our classic pav bhaji generously topped with Amul cheese cubes melted to perfection on the hot tawa.',
     price: 310,
     category: 'pav-bhaji',
-    image: '/src/assets/images/dosa_crush_pav_bhaji_1794506306212.jpg',
+    image: IMAGES.pavBhaji,
     isVegetarian: true
   },
   {
@@ -192,7 +194,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Smooth raw banana and green plantain bhaji cooked without onion or garlic, rich in butter.',
     price: 270,
     category: 'pav-bhaji',
-    image: '/src/assets/images/dosa_crush_pav_bhaji_1794506306212.jpg',
+    image: IMAGES.pavBhaji,
     isVegetarian: true
   },
 
@@ -204,7 +206,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Batter-fried paneer cubes tossed in pungent garlic chilli sauce with spring onions.',
     price: 290,
     category: 'chinese-snacks',
-    image: '/src/assets/images/dosa_crush_paneer_dosa_1794506078808.jpg',
+    image: IMAGES.paneerDosa,
     isVegetarian: true,
     isSpicy: true
   },
@@ -215,7 +217,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Minced vegetable balls fried and simmered in an umami-rich soy garlic gravy.',
     price: 260,
     category: 'chinese-snacks',
-    image: '/src/assets/images/dosa_crush_mysore_masala_1794506079027.jpg',
+    image: IMAGES.mysoreMasala,
     isVegetarian: true
   },
   {
@@ -225,7 +227,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Hand-cut golden fries dusted with fiery peri peri seasoning and garlic aioli.',
     price: 180,
     category: 'chinese-snacks',
-    image: '/src/assets/images/dosa_crush_hero_1794506063264.jpg',
+    image: IMAGES.heroDosa,
     isVegetarian: true
   },
 
@@ -237,7 +239,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Three-layer grilled bread filled with spicy potato mash, cucumber slices, beetroot, and melted cheese.',
     price: 240,
     category: 'sandwiches-pizza',
-    image: '/src/assets/images/dosa_crush_jini_dosa_1794506306122.jpg',
+    image: IMAGES.jiniDosa,
     isVegetarian: true
   },
   {
@@ -247,7 +249,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Crispy flatbread crust topped with Makhani sauce, tandoori paneer chunks, and gooey mozzarella.',
     price: 390,
     category: 'sandwiches-pizza',
-    image: '/src/assets/images/dosa_crush_cheese_volcano_1794506306330.jpg',
+    image: IMAGES.cheeseVolcano,
     isVegetarian: true
   },
 
@@ -259,7 +261,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Traditional Gwalior-style strong filter coffee brewed with chicory and infused with nitrogen for an ultra-creamy cascade.',
     price: 180,
     category: 'beverages',
-    image: '/src/assets/images/dosa_crush_cold_brew_1794506079250.jpg',
+    image: IMAGES.coldBrew,
     isBestseller: true,
     isVegetarian: true
   },
@@ -270,7 +272,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'Slow-simmered almond milk flavored with green cardamom, saffron, and crunchy pistachios served chilled.',
     price: 210,
     category: 'beverages',
-    image: '/src/assets/images/dosa_crush_cold_brew_1794506079250.jpg',
+    image: IMAGES.coldBrew,
     isVegetarian: true
   },
   {
@@ -280,7 +282,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'A refreshing tangy summer cooler made from wild blackberries, cumin, black salt, and freshly squeezed lime.',
     price: 170,
     category: 'beverages',
-    image: '/src/assets/images/dosa_crush_hero_1794506063264.jpg',
+    image: IMAGES.heroDosa,
     isVegetarian: true
   }
 ];

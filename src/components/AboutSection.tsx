@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Sparkles, Heart } from 'lucide-react';
+import { IMAGES } from '../data/images';
 
 export function AboutSection() {
   const principles = [
@@ -93,7 +94,7 @@ export function AboutSection() {
 
               <div className="relative overflow-hidden rounded-2xl shadow-xl border border-[#27201C]/10 bg-[#27201C]">
                 <img
-                  src="/src/assets/images/dosa_crush_about_tawa_1794506454378.jpg"
+                  src={IMAGES.aboutTawa}
                   alt="Chef preparing tawa dosa at Dosa Crush Gwalior"
                   referrerPolicy="no-referrer"
                   className="w-full h-[420px] sm:h-[480px] object-cover object-center transform hover:scale-105 transition-transform duration-700"
